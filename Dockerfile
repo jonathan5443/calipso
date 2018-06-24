@@ -1,4 +1,4 @@
-# essentialsgraphql_app
+# calipso
 FROM node:8.9.1
 EXPOSE 3000
 
