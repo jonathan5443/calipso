@@ -20,7 +20,6 @@ function getPatient(req, res) {
 }
 
 function getPatients(req, res) {
-  console.log(req.user);
   Patients.find({}, (err, patients) => {
     if (err) {
       return res.status(500).send({
@@ -32,8 +31,11 @@ function getPatients(req, res) {
         message: `There is not patients`
       });
     }
+    const patientsByDoctor = patients.filter(
+      patient => patient.doctorId === req.user
+    );
     res.status(200).send({
-      patients: patients
+      patients: patientsByDoctor
     });
   });
 }
