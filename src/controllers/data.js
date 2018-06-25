@@ -1,4 +1,4 @@
-import Product from "../models/product";
+import Product from "../models/data";
 
 function getProduct(req, res) {
   let productId = req.params.productId;

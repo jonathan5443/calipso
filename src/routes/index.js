@@ -1,6 +1,6 @@
 import express from "express";
 import dataCtrl from "../controllers/data";
-import userCtrl from "../controllers/user";
+import userCtrl from "../controllers/users";
 import auth from "../middlewares/auth";
 
 const api = express.Router();
@@ -14,7 +14,7 @@ api.post("/signup", userCtrl.singUp);
 api.post("/signin", userCtrl.singIn);
 api.get("/private", auth, function(req, res) {
   res.status(200).send({
-    message: `Tienes acceso`
+    message: "It worked! User id is: " + req.user + "."
   });
 });
 

@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-// TODO Saves the user's password hashed (plain text password storage is not good)
+// Saves the user's password hashed (plain text password storage is not good)
 UserSchema.pre("save", function(next) {
   var user = this;
   if (this.isModified("password") || this.isNew) {
