@@ -5,13 +5,14 @@ import auth from "../middlewares/auth";
 
 const api = express.Router();
 
-api.get("/product", dataCtrl.getProducts);
-api.get("/product/:productId", dataCtrl.getProduct);
-api.post("/product", dataCtrl.postProduct);
-api.put("/product/:productId", dataCtrl.updateProduct);
-api.delete("/product/:productId", dataCtrl.deleteProduct);
-api.post("/signup", userCtrl.singUp);
-api.post("/signin", userCtrl.singIn);
+api.get("/product", auth, dataCtrl.getProducts);
+api.get("/product/:productId", auth, dataCtrl.getProduct);
+api.post("/product", auth, dataCtrl.postProduct);
+api.put("/product/:productId", auth, dataCtrl.updateProduct);
+api.delete("/product/:productId", auth, dataCtrl.deleteProduct);
+api.post("/signup", auth, userCtrl.singUp);
+api.post("/signin", auth, userCtrl.singIn);
+// To test if the authorization is working
 api.get("/private", auth, function(req, res) {
   res.status(200).send({
     message: "It worked! User id is: " + req.user + "."
