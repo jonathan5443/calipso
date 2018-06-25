@@ -7,7 +7,11 @@ function singUp(req, res) {
   } else {
     const newUser = new User({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      name: req.body.name,
+      lastName: req.body.lastName,
+      documentType: req.body.documentType,
+      documentNumber: req.body.documentNumber
     });
 
     // Attempt to save the user
