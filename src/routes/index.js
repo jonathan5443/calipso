@@ -1,15 +1,15 @@
 import express from "express";
-import dataCtrl from "../controllers/data";
+import patientCtrl from "../controllers/patients";
 import userCtrl from "../controllers/users";
 import auth from "../middlewares/auth";
 
 const api = express.Router();
 
-api.get("/product", auth, dataCtrl.getProducts);
-api.get("/product/:productId", auth, dataCtrl.getProduct);
-api.post("/product", auth, dataCtrl.postProduct);
-api.put("/product/:productId", auth, dataCtrl.updateProduct);
-api.delete("/product/:productId", auth, dataCtrl.deleteProduct);
+api.get("/patient", auth, patientCtrl.getPatients);
+api.get("/patient/:patientId", auth, patientCtrl.getPatient);
+api.post("/patient", auth, patientCtrl.postPatient);
+api.put("/patient/:patientId", auth, patientCtrl.updatePatient);
+api.delete("/patient/:patientId", auth, patientCtrl.deletePatient);
 api.post("/signup", userCtrl.singUp);
 api.post("/signin", userCtrl.singIn);
 // To test if the authorization is working
