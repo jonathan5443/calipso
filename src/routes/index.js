@@ -10,8 +10,8 @@ api.get("/product/:productId", auth, dataCtrl.getProduct);
 api.post("/product", auth, dataCtrl.postProduct);
 api.put("/product/:productId", auth, dataCtrl.updateProduct);
 api.delete("/product/:productId", auth, dataCtrl.deleteProduct);
-api.post("/signup", auth, userCtrl.singUp);
-api.post("/signin", auth, userCtrl.singIn);
+api.post("/signup", userCtrl.singUp);
+api.post("/signin", userCtrl.singIn);
 // To test if the authorization is working
 api.get("/private", auth, function(req, res) {
   res.status(200).send({
