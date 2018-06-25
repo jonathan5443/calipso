@@ -20,6 +20,7 @@ function getPatient(req, res) {
 }
 
 function getPatients(req, res) {
+  console.log(req.user);
   Patients.find({}, (err, patients) => {
     if (err) {
       return res.status(500).send({
@@ -55,12 +56,15 @@ function updatePatient(req, res) {
 }
 
 function postPatient(req, res) {
-  let patient = new patient();
+  let patient = new Patients();
   patient.name = req.body.name;
-  patient.pictue = req.body.picture;
-  patient.price = req.body.price;
-  patient.category = req.body.category;
-  patient.description = req.body.dscription;
+  patient.lastName = req.body.lastName;
+  patient.doctorId = req.user;
+  patient.video = req.body.video;
+  patient.age = req.body.age;
+  patient.sex = req.body.sex;
+  patient.city = req.body.city;
+  patient.grade = req.body.grade;
 
   patient.save((err, patientStored) => {
     if (err) {
