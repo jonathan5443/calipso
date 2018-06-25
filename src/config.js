@@ -17,5 +17,5 @@ if (process.env.NODE_ENV) {
 module.exports = {
   PORT: process.env.PORT || 3000,
   DB_CONFIG,
-  SECRET_TOKEN: "essentials_top_secret"
+  SECRET_TOKEN: "calipso_top_secret"
 };
