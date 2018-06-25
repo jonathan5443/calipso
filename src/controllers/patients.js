@@ -98,7 +98,7 @@ function deletePatient(req, res) {
         });
       }
       res.status(200).send({
-        message: `The patient has been updated`
+        message: `The patient has been deleted`
       });
     });
   });
