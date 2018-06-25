@@ -1,6 +1,4 @@
-
-
-# now alias essentialsgraphql-folmypyfsf.now.sh graphql-essentials
+# now alias calipso-folmypyfsf.now.sh calipso-api
 # now alias ls
 echo "***DEPLOY API*** \n "
 
@@ -20,7 +18,7 @@ if [ $erase = "y" ]; then
  echo -e "Please input the url to create a prettier alias: \c "
  read newurl
  echo $newurl
- now alias $newurl graphql-essentials
+ now alias $newurl calipso-api
  now alias ls
 else
  echo "Creating a new instance \n"
@@ -29,6 +27,6 @@ else
  echo "Please input the url to create a prettier alias: \c "
  read newurl
  echo $newurl
- now alias $newurl graphql-essentials
+ now alias $newurl calipso-api
  now alias ls
 fi
