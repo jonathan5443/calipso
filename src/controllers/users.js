@@ -1,4 +1,4 @@
-import User from "../graphql/users/model";
+import User from "../models/users";
 import Service from "../services";
 
 function singUp(req, res) {
