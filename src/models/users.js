@@ -9,6 +9,23 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     required: true
   },
+  name: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  documentType: {
+    type: String,
+    required: true,
+    enum: ["CC", "CE", "Passport", "NIT"]
+  },
+  documentNumber: {
+    type: String,
+    required: true
+  },
   password: {
     type: String,
     required: true
