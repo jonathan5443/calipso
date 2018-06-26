@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const PatientBackupSchema = Schema({
+const PatientHistorySchema = Schema({
   name: String,
   lastName: String,
   doctorId: String,
@@ -19,4 +19,4 @@ const PatientBackupSchema = Schema({
   }
 });
 
-module.exports = mongoose.model("PatientBackup", PatientBackupSchema);
+module.exports = mongoose.model("PatientHistory", PatientHistorySchema);
