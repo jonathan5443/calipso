@@ -67,6 +67,7 @@ function postPatient(req, res) {
   patient.sex = req.body.sex;
   patient.city = req.body.city;
   patient.grade = req.body.grade;
+  patient.date = req.body.date;
 
   patient.save((err, patientStored) => {
     if (err) {

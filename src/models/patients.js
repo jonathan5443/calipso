@@ -12,7 +12,11 @@ const PatientSchema = Schema({
     enum: ["M", "F"]
   },
   city: String,
-  grade: String
+  grade: String,
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 module.exports = mongoose.model("Patient", PatientSchema);
