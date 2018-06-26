@@ -1,4 +1,5 @@
 import Patients from "../models/patients";
+import PatientsBackup from "../models/patientsBackup";
 
 function getPatient(req, res) {
   let patientId = req.params.patientId;
@@ -59,15 +60,27 @@ function updatePatient(req, res) {
 
 function postPatient(req, res) {
   let patient = new Patients();
+  let patientsBackup = new PatientsBackup();
   patient.name = req.body.name;
+  patientsBackup.name = req.body.name;
   patient.lastName = req.body.lastName;
+  patientsBackup.lastName = req.body.lastName;
   patient.doctorId = req.user;
+  patientsBackup.doctorId = req.user;
   patient.video = req.body.video;
+  patientsBackup.video = req.body.video;
   patient.age = req.body.age;
+  patientsBackup.age = req.body.age;
   patient.sex = req.body.sex;
+  patientsBackup.sex = req.body.sex;
   patient.city = req.body.city;
+  patientsBackup.city = req.body.city;
   patient.grade = req.body.grade;
+  patientsBackup.grade = req.body.grade;
   patient.date = req.body.date;
+  patientsBackup.date = req.body.date;
+
+  patientsBackup.save();
 
   patient.save((err, patientStored) => {
     if (err) {

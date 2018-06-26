@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 
 // Schema defines how the user's data will be stored in MongoDB
 const UserSchema = new mongoose.Schema({
